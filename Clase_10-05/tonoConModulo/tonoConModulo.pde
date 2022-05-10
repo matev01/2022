@@ -1,33 +1,26 @@
 int px;
-int cuenta;
+
 void setup() {
   size(500, 500);
   // tint(); // investigar tint
+  //delay(2000); // demora el programa 2 segundos
 }
 void draw() {
   background(0);
-  float tono = px*255/width; // regla de tres
+  float tono = px*255/(width-50); // regla de tres (ajusté el límite al borde menos la 1/2 de la figura)
   fill(255, 0, 0, tono);
-  ellipse(px, 100, 100, 100);
-  if (frameCount%30==0) {
-    px+= 10;
+  ellipse(px, 200, 100, 100);
+  if (frameCount%30==0) { // dos veces por segundo
+    px+= 10; // aumenta 10
   }
 
   if (px>width-50) {
     px = 50;
-    cuenta = 0;
+    delay(2000); // <<<<<------   prueben descomentar esto
   }
 
-  //delay(2000); // demora el programa 2 segundos
   textSize(25);
   fill(255, 0, 0);
-  text("tono "+ cuenta, 400, 50);
-  text(frameCount, 400, 100);
-
-  cuenta++;
-}
-void mousePressed() {
-  cuenta = 0;
-  px = 0;
-  frameCount=0;
+  text("tono "+ tono, 350, 50);
+  text(frameCount, 350, 100);
 }
