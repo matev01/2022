@@ -5,7 +5,7 @@ PImage miImagen;
 PFont textos;
 void setup() {
   size(800, 600); // tamaño de la ventana MAXIMO
-  frameRate(20); //  NO SE USA!!!!!!
+  frameRate(20); // NO MODIFICAR EL frameRate!!!!!!
 }
 
 void draw() {
