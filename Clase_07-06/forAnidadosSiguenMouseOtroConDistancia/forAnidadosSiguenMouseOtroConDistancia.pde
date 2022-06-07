@@ -5,7 +5,9 @@ void setup() {
 }
 void draw() {
   background(0);
-  tam = width/cant;
+  tam = width/cant; // <<<<< ----- ATENCIÓN A ESTO
+/*si van a modificar la cantidad con el programa corriendo la cuenta que calcula la relación de tamaño tiene que ser actualizada también en el draw */
+
   for (int i=0; i<cant; i++) {
     for (int j=0; j<cant; j++) {
       // rect(i*tam, j*tam, tam, tam);
@@ -30,8 +32,8 @@ void draw() {
   }
 }
 void mousePressed() {
-  cant++;
+  cant++; // con cada click aumentamos la cantidad de filas y columnas
 }
 void keyPressed() {
-  cant = 6;
+  cant = 6; // reiniciamos cantidad original
 }
