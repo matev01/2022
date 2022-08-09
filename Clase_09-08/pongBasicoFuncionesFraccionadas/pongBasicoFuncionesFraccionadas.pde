@@ -53,6 +53,9 @@ void draw() {
     }
   }
 }
+/*Fraccionamos en dos funciones la funcion rebote, separando en dos funciones el control de rebote lateral en cada raqueda
+de la altura donde el rebote es posible*/
+
 boolean reboteLateral(float bx, float diam, int rx, int ancho) {
   boolean rebota = bx-diam/2<rx+ancho && bx+diam/2>rx;
   return rebota;
@@ -61,7 +64,7 @@ boolean zonaAltura(float by, float diam, int ry, int altura ) {
   boolean rebota = by+diam/2>ry && by-diam/2<ry+altura;
   return rebota;
 }
-boolean rebote(float bx, float by, float diam, int rx, int ry, int ancho, int alto ) {
+boolean rebote(float bx, float by, float diam, int rx, int ry, int ancho, int alto ) { // no està en uso ahora
   boolean toca = bx-diam/2 <rx+ancho && bx>rx && by>ry && by<ry+alto || 
     bx+diam/2 >rx &&  bx<rx+ancho && by>ry && by<ry+alto; 
   return toca;
